@@ -1,2 +1,3 @@
 # rubyk
- RubyK - TinyRuby compiler
+
+RubyK - Ruby compiler
