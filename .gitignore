@@ -1,6 +1,1 @@
-*.jar
 
-out/*.ll
-out/*.s
-go.mod
-go.sum
