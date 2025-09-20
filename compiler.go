@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/antlr4-go/antlr"
 	gen "github.com/sef-comp/truby-compiler/codegen"
 	p "github.com/sef-comp/truby-compiler/parser"
-	"os"
 )
 
 func main() {
@@ -34,9 +35,9 @@ func main() {
 	// Парсинг программы
 	tree := parser.Program()
 
-	// children := tree.GetChildren()
-
-	// fmt.Println()
+	// Вывод AST в текстовом формате
+	fmt.Println("AST:")
+	fmt.Println(tree.ToStringTree(parser.GetRuleNames(), parser))
 
 	// Генерация кода LLVM IR с использованием llir/llvm
 	visitor := gen.NewVisitor(true)
