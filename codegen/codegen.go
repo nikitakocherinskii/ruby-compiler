@@ -74,9 +74,6 @@ func endWithBr(block, nextBlock *ir.Block) {
 func (v *MyRubyKVisitor) pushScope() {
 	v.VariableScopes = append(v.VariableScopes, VarScope{})
 }
-func (v *MyRubyKVisitor) popScope() {
-	v.VariableScopes = v.VariableScopes[:len(v.VariableScopes)-1]
-}
 
 func (v *MyRubyKVisitor) newVariable(t types.Type, name string) *ir.InstAlloca {
 	_, exists := v.variable(name)
@@ -86,24 +83,12 @@ func (v *MyRubyKVisitor) newVariable(t types.Type, name string) *ir.InstAlloca {
 
 	ptr := v.Main.NewAlloca(t)
 
-	// assing new variable to current variable scope
+	// assign new variable to current variable scope
 	v.VariableScopes[len(v.VariableScopes)-1][name] = ptr
 
 	return ptr
 }
 
-func (v *MyRubyKVisitor) identifier(name string) value.Named {
-	if id, _ := v.variable(name); id != nil {
-		return id
-	}
-	if id := v.argumentId(name); id != nil {
-		return id
-	}
-	if id := v.funcId(name); id != nil {
-		return id
-	}
-	return nil
-}
 
 func (v *MyRubyKVisitor) funcId(name string) *ir.Func {
 	for _, function := range v.Module.Funcs {
@@ -114,14 +99,6 @@ func (v *MyRubyKVisitor) funcId(name string) *ir.Func {
 	return nil
 }
 
-func (v *MyRubyKVisitor) argumentId(name string) *ir.Param {
-	for _, param := range v.Function.Params {
-		if param.Name() == name {
-			return param
-		}
-	}
-	return nil
-}
 
 func (v *MyRubyKVisitor) variable(name string) (*ir.InstAlloca, bool) {
 	for i := len(v.VariableScopes) - 1; i >= 0; i = i - 1 {
@@ -161,11 +138,6 @@ func baseArrType(ptr *ir.InstGetElementPtr) *types.ArrayType {
 		}
 	}
 	return arrType
-}
-
-func (v *MyRubyKVisitor) sameT(expr, nextExpr value.Value) (value.Value, value.Value) {
-	// TODO: check size compatibility
-	return v.dereference(expr), v.dereference(nextExpr)
 }
 
 func (v *MyRubyKVisitor) castCond(cond value.Value) value.Value {
@@ -813,39 +785,8 @@ func (v *MyRubyKVisitor) VisitInitial_array_assignment(ctx *gen.Initial_array_as
 	varName := ctx.Lvalue().GetText()
 	elementType := types.I32
 
-	// TODO Переделать на кучу
-	// mallocFunc := v.Module.NewFunc("malloc", types.NewPointer(elementType), types.I32)
-	// arrayAlloc := v.Main.NewCall(mallocFunc, arraySize)
 
-	// arrayAlloc := v.block().NewAlloca(types.NewArray(32, elementType))
-	// array := v.dereference(arrayAlloc)
-
-	if v.Debug {
-		// log.Println("array type: ", array.Type())
-	}
-
-	// v.VariableScopes[len(v.VariableScopes)-1][varName] = arrayAlloc
 	_ = v.newVariable(types.NewArray(32, elementType), varName)
-
-	// ptr, _ := v.variable(varName);
-
-	//  log.Println(ptr.Type())
-	//  arr := v.dereference(ptr)
-	//  log.Println(arr.Type())
-	//  // log.Println(arrayAlloc.Type())
-	//  arrayPtr := v.block().NewGetElementPtr(
-	// 	ptr.ElemType, // Тип элементов
-	// 	ptr,          // Указатель на массив
-	// 	constant.NewInt(types.I32, 0), // Базовый указатель
-	// 	constant.NewInt(types.I32, 0), // Индекс первого элемента
-	// )
-	//
-	//  log.Println(arrayPtr)
-	//
-	// // Пример инициализации первого элемента
-	// v.block().NewStore(constant.NewInt(types.I32, 42), arrayPtr)
-	//
-	//  log.Println("ok")
 
 	return nil
 }
