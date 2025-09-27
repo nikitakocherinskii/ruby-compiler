@@ -11,8 +11,8 @@ import (
 	"github.com/llir/llvm/ir/enum"
 	"github.com/llir/llvm/ir/types"
 	"github.com/llir/llvm/ir/value"
-	"github.com/sef-comp/truby-compiler/parser"
-	gen "github.com/sef-comp/truby-compiler/parser" // сгенерированный парсер и лексер
+	"github.com/nikitakocherinskii/ruby-compiler/parser"
+	gen "github.com/nikitakocherinskii/ruby-compiler/parser" // сгенерированный парсер и лексер
 )
 
 type VarScope map[string]*ir.InstAlloca

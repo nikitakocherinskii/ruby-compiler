@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/antlr4-go/antlr"
-	gen "github.com/sef-comp/truby-compiler/codegen"
-	p "github.com/sef-comp/truby-compiler/parser"
+	gen "github.com/nikitakocherinskii/ruby-compiler/codegen"
+	p "github.com/nikitakocherinskii/ruby-compiler/parser"
 )
 
 func main() {
