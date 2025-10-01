@@ -1,0 +1,203 @@
+AST:
+└── program
+    ├── expression_list
+    │   ├── expression_list
+    │   │   ├── expression_list
+    │   │   │   ├── expression_list
+    │   │   │   │   ├── expression_list
+    │   │   │   │   │   ├── expression_list
+    │   │   │   │   │   │   ├── expression_list
+    │   │   │   │   │   │   │   ├── expression
+    │   │   │   │   │   │   │   │   └── rvalue
+    │   │   │   │   │   │   │   │       └── int_assignment
+    │   │   │   │   │   │   │   │           ├── lvalue
+    │   │   │   │   │   │   │   │           │   └── id_
+    │   │   │   │   │   │   │   │           │       └── 'a'
+    │   │   │   │   │   │   │   │           ├── '='
+    │   │   │   │   │   │   │   │           └── int_result
+    │   │   │   │   │   │   │   │               └── int_t
+    │   │   │   │   │   │   │   │                   └── '0'
+    │   │   │   │   │   │   │   └── terminator
+    │   │   │   │   │   │   │       └── crlf
+    │   │   │   │   │   │   │           └── '
+'
+    │   │   │   │   │   │   ├── expression
+    │   │   │   │   │   │   │   └── rvalue
+    │   │   │   │   │   │   │       └── int_assignment
+    │   │   │   │   │   │   │           ├── lvalue
+    │   │   │   │   │   │   │           │   └── id_
+    │   │   │   │   │   │   │           │       └── 'b'
+    │   │   │   │   │   │   │           ├── '='
+    │   │   │   │   │   │   │           └── int_result
+    │   │   │   │   │   │   │               └── int_t
+    │   │   │   │   │   │   │                   └── '1'
+    │   │   │   │   │   │   └── terminator
+    │   │   │   │   │   │       ├── terminator
+    │   │   │   │   │   │       │   └── crlf
+    │   │   │   │   │   │       │       └── '
+'
+    │   │   │   │   │   │       └── crlf
+    │   │   │   │   │   │           └── '
+'
+    │   │   │   │   │   ├── expression
+    │   │   │   │   │   │   └── rvalue
+    │   │   │   │   │   │       └── int_assignment
+    │   │   │   │   │   │           ├── lvalue
+    │   │   │   │   │   │           │   └── id_
+    │   │   │   │   │   │           │       └── 'i'
+    │   │   │   │   │   │           ├── '='
+    │   │   │   │   │   │           └── int_result
+    │   │   │   │   │   │               └── int_t
+    │   │   │   │   │   │                   └── '2'
+    │   │   │   │   │   └── terminator
+    │   │   │   │   │       └── crlf
+    │   │   │   │   │           └── '
+'
+    │   │   │   │   ├── expression
+    │   │   │   │   │   └── rvalue
+    │   │   │   │   │       └── int_assignment
+    │   │   │   │   │           ├── lvalue
+    │   │   │   │   │           │   └── id_
+    │   │   │   │   │           │       └── 'n'
+    │   │   │   │   │           ├── '='
+    │   │   │   │   │           └── int_result
+    │   │   │   │   │               └── int_t
+    │   │   │   │   │                   └── '10'
+    │   │   │   │   └── terminator
+    │   │   │   │       └── crlf
+    │   │   │   │           └── '
+'
+    │   │   │   ├── expression
+    │   │   │   │   └── rvalue
+    │   │   │   │       └── int_assignment
+    │   │   │   │           ├── lvalue
+    │   │   │   │           │   └── id_
+    │   │   │   │           │       └── 'tmp'
+    │   │   │   │           ├── '='
+    │   │   │   │           └── int_result
+    │   │   │   │               └── int_t
+    │   │   │   │                   └── '0'
+    │   │   │   └── terminator
+    │   │   │       └── crlf
+    │   │   │           └── '
+'
+    │   │   ├── expression
+    │   │   │   └── while_statement
+    │   │   │       ├── 'while'
+    │   │   │       ├── cond_expression
+    │   │   │       │   └── comparison_list
+    │   │   │       │       └── comparison
+    │   │   │       │           ├── comp_var
+    │   │   │       │           │   └── all_result
+    │   │   │       │           │       └── dynamic_result
+    │   │   │       │           │           └── dynamic_
+    │   │   │       │           │               └── id_
+    │   │   │       │           │                   └── 'i'
+    │   │   │       │           ├── '<'
+    │   │   │       │           └── comp_var
+    │   │   │       │               └── all_result
+    │   │   │       │                   └── dynamic_result
+    │   │   │       │                       └── dynamic_
+    │   │   │       │                           └── id_
+    │   │   │       │                               └── 'n'
+    │   │   │       ├── crlf
+    │   │   │       │   └── '
+'
+    │   │   │       ├── statement_body
+    │   │   │       │   └── statement_expression_list
+    │   │   │       │       ├── statement_expression_list
+    │   │   │       │       │   ├── statement_expression_list
+    │   │   │       │       │   │   ├── statement_expression_list
+    │   │   │       │       │   │   │   ├── expression
+    │   │   │       │       │   │   │   │   └── rvalue
+    │   │   │       │       │   │   │   │       └── dynamic_assignment
+    │   │   │       │       │   │   │   │           ├── lvalue
+    │   │   │       │       │   │   │   │           │   └── id_
+    │   │   │       │       │   │   │   │           │       └── 'tmp'
+    │   │   │       │       │   │   │   │           ├── '='
+    │   │   │       │       │   │   │   │           └── dynamic_result
+    │   │   │       │       │   │   │   │               └── dynamic_
+    │   │   │       │       │   │   │   │                   └── id_
+    │   │   │       │       │   │   │   │                       └── 'b'
+    │   │   │       │       │   │   │   └── terminator
+    │   │   │       │       │   │   │       └── crlf
+    │   │   │       │       │   │   │           └── '
+'
+    │   │   │       │       │   │   ├── expression
+    │   │   │       │       │   │   │   └── rvalue
+    │   │   │       │       │   │   │       └── dynamic_assignment
+    │   │   │       │       │   │   │           ├── lvalue
+    │   │   │       │       │   │   │           │   └── id_
+    │   │   │       │       │   │   │           │       └── 'b'
+    │   │   │       │       │   │   │           ├── '='
+    │   │   │       │       │   │   │           └── dynamic_result
+    │   │   │       │       │   │   │               ├── dynamic_result
+    │   │   │       │       │   │   │               │   └── dynamic_
+    │   │   │       │       │   │   │               │       └── id_
+    │   │   │       │       │   │   │               │           └── 'a'
+    │   │   │       │       │   │   │               ├── '+'
+    │   │   │       │       │   │   │               └── dynamic_result
+    │   │   │       │       │   │   │                   └── dynamic_
+    │   │   │       │       │   │   │                       └── id_
+    │   │   │       │       │   │   │                           └── 'b'
+    │   │   │       │       │   │   └── terminator
+    │   │   │       │       │   │       └── crlf
+    │   │   │       │       │   │           └── '
+'
+    │   │   │       │       │   ├── expression
+    │   │   │       │       │   │   └── rvalue
+    │   │   │       │       │   │       └── dynamic_assignment
+    │   │   │       │       │   │           ├── lvalue
+    │   │   │       │       │   │           │   └── id_
+    │   │   │       │       │   │           │       └── 'a'
+    │   │   │       │       │   │           ├── '='
+    │   │   │       │       │   │           └── dynamic_result
+    │   │   │       │       │   │               └── dynamic_
+    │   │   │       │       │   │                   └── id_
+    │   │   │       │       │   │                       └── 'tmp'
+    │   │   │       │       │   └── terminator
+    │   │   │       │       │       └── crlf
+    │   │   │       │       │           └── '
+'
+    │   │   │       │       ├── expression
+    │   │   │       │       │   └── rvalue
+    │   │   │       │       │       └── dynamic_assignment
+    │   │   │       │       │           ├── lvalue
+    │   │   │       │       │           │   └── id_
+    │   │   │       │       │           │       └── 'i'
+    │   │   │       │       │           ├── '='
+    │   │   │       │       │           └── dynamic_result
+    │   │   │       │       │               ├── dynamic_result
+    │   │   │       │       │               │   └── dynamic_
+    │   │   │       │       │               │       └── id_
+    │   │   │       │       │               │           └── 'i'
+    │   │   │       │       │               ├── '+'
+    │   │   │       │       │               └── int_result
+    │   │   │       │       │                   └── int_t
+    │   │   │       │       │                       └── '1'
+    │   │   │       │       └── terminator
+    │   │   │       │           └── crlf
+    │   │   │       │               └── '
+'
+    │   │   │       └── 'end'
+    │   │   └── terminator
+    │   │       ├── terminator
+    │   │       │   └── crlf
+    │   │       │       └── '
+'
+    │   │       └── crlf
+    │   │           └── '
+'
+    │   ├── expression
+    │   │   └── return_statement
+    │   │       ├── 'return'
+    │   │       └── all_result
+    │   │           └── dynamic_result
+    │   │               └── dynamic_
+    │   │                   └── id_
+    │   │                       └── 'b'
+    │   └── terminator
+    │       └── crlf
+    │           └── '
+'
+    └── '<EOF>'
